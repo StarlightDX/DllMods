@@ -3,12 +3,12 @@ std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies =
     { "SoundAfrica", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } },
     { "SoundBeach", { "cte200", "ssh200", "csc200", "euc200" } },
     { "SoundChina", { "sph200", "cte200", "ssh200", "csc200", "euc200", "pla100", "pla200" } },
-    { "SoundEggmanLand", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } },
-    { "SoundEU", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } },
-    { "SoundMykonos", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } },
-    { "SoundNY", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } },
-    { "SoundPetra", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } },
-    { "SoundSnow", { "cpz200", "ssz200", "cte200", "ssh200", "csc200" } }
+    { "SoundEggmanLand", { "ghz200", "cpz200" } },
+    { "SoundEU", { "ghz100", "ghz200", "cpz200", "cte200", "euc200", "pla200" } },
+    { "SoundMykonos", { "ghz100", "ghz200", "cpz200", "ssz200", "cte200", "csc200", "euc200", "pla100", "pla200" } },
+    { "SoundNY", { "ghz100", "ghz200", "cpz200", "csc200", "euc200" } },
+    { "SoundPetra", { "ghz200", "ghz201", "ssz200", "ssh200", "pla200" } },
+    { "SoundSnow", { "ghz100", "ghz200", "cpz101", "cpz200", "ssz200", "cte200", "csc200", "pla200" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)
