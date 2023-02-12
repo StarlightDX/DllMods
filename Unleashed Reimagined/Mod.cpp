@@ -3,19 +3,23 @@ std::string sonictype;
 std::string upadd1type;
 std::string upadd2type;
 std::string upadd3type;
+std::string egbadd1type;
 std::string setexadabattype; 
 std::string stagepacktype;
+std::string stageegbpacktype;
 
 extern "C" __declspec(dllexport) void Init()
 {
 	INIReader reader("mod.ini");
-     hudtype = reader.Get("Main", "IncludeDir6", "Off");
-	 sonictype = reader.Get("Main", "IncludeDir5", "Off");
+     hudtype = reader.Get("Main", "IncludeDir7", "Off");
+	 sonictype = reader.Get("Main", "IncludeDir6", "Off");
      upadd1type = reader.Get("Main", "IncludeDir0", "UPDeluxe");
      upadd2type = reader.Get("Main", "IncludeDir1", "Off");
      upadd3type = reader.Get("Main", "IncludeDir2", "Off");
+	 egbadd1type = reader.Get("Main", "IncludeDir4", "Off");
 	 setexadabattype = reader.Get("Main", "IncludeDir3", "Off");
-     stagepacktype = reader.Get("Main", "IncludeDir4", "Unleashed Project");
+     stagepacktype = reader.Get("Main", "IncludeDir5", "Unleashed Project");
+	 stageegbpacktype = reader.Get("Main", "IncludeDir5", "STGEggmanLand");
 	ArchiveTreePatcher::Install();
 }
 extern "C" __declspec(dllexport) void PostInit()
@@ -31,6 +35,10 @@ extern "C" __declspec(dllexport) void PostInit()
 	}
 	if (!StringHelper::Compare(stagepacktype, "Unleashed Project") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(upadd2type, "Off") || !StringHelper::Compare(upadd3type, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
 		MessageBoxA(nullptr, "Unleashed Project mode is required for additional content, please disable this option when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+		exit(-1);
+	}
+	if (!StringHelper::Compare(stageegbpacktype, "STGEggmanLand") && (!StringHelper::Compare(egbadd1type, "Off"))) {
+		MessageBoxA(nullptr, "Please set EggmanLand's music to day when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
 }
