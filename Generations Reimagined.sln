@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Unleashed Reimagined", "Unleashed Reimagined\Unleashed Reimagined.vcxproj", "{3B1FACDC-2FB9-4CE7-ABF7-9F88E9F9501E}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Generations Reimagined", "Generations Reimagined\Generations Reimagined.vcxproj", "{3B1FACDC-2FB9-4CE7-ABF7-9F88E9F9501E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {155DF2AD-85A4-4600-8F84-799D00B883CD}
+		SolutionGuid = {69CAB621-F462-4549-8F68-FD85885003CF}
 	EndGlobalSection
 EndGlobal
