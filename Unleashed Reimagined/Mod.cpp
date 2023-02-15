@@ -75,36 +75,36 @@ extern "C" __declspec(dllexport) void PostInit()
 		MessageBoxA(nullptr, "Please set EggmanLand's music to day when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
-	if (!StringHelper::Compare(apadabatextype, ".\\Adventure Pack\\Extended\\AdabatEX\\") && (!StringHelper::Compare(apadabattype, "Off") || (!StringHelper::Compare(apadabattype, ".\\Adventure Pack\\Standalone\\Adabat\\"))) {
+	if (!StringHelper::Compare(apadabatextype, ".\\Adventure Pack\\Extended\\AdabatEX\\") && (!StringHelper::Compare(apadabattype, "Off") || (!StringHelper::Compare(apadabattype, ".\\Adventure Pack\\Standalone\\Adabat\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apapotosextype, ".\\Adventure Pack\\Extended\\ApotosEX\\") && (!StringHelper::Compare(apapotostype, "Off") || (!StringHelper::Compare(apapotostype, ".\\Adventure Pack\\Standalone\\Apotos\\"))) {
+	if (!StringHelper::Compare(apapotosextype, ".\\Adventure Pack\\Extended\\ApotosEX\\") && (!StringHelper::Compare(apapotostype, "Off") || (!StringHelper::Compare(apapotostype, ".\\Adventure Pack\\Standalone\\Apotos\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apchinaextype, ".\\Adventure Pack\\Extended\\ChinaEX\\") && (!StringHelper::Compare(apchinatype, "Off") || (!StringHelper::Compare(apchinatype, ".\\Adventure Pack\\Standalone\\China\\"))) {
+	if (!StringHelper::Compare(apchinaextype, ".\\Adventure Pack\\Extended\\ChinaEX\\") && (!StringHelper::Compare(apchinatype, "Off") || (!StringHelper::Compare(apchinatype, ".\\Adventure Pack\\Standalone\\China\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apempireextype, ".\\Adventure Pack\\Extended\\EmpireEX\\") && (!StringHelper::Compare(apempiretype, "Off") || (!StringHelper::Compare(apempiretype, ".\\Adventure Pack\\Standalone\\Empire\\"))) {
+	if (!StringHelper::Compare(apempireextype, ".\\Adventure Pack\\Extended\\EmpireEX\\") && (!StringHelper::Compare(apempiretype, "Off") || (!StringHelper::Compare(apempiretype, ".\\Adventure Pack\\Standalone\\Empire\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apholoskaextype, ".\\Adventure Pack\\Extended\\HoloskaEX\\") && (!StringHelper::Compare(apholoskatype, "Off") || (!StringHelper::Compare(apholoskatype, ".\\Adventure Pack\\Standalone\\Holoska\\"))) {
+	if (!StringHelper::Compare(apholoskaextype, ".\\Adventure Pack\\Extended\\HoloskaEX\\") && (!StringHelper::Compare(apholoskatype, "Off") || (!StringHelper::Compare(apholoskatype, ".\\Adventure Pack\\Standalone\\Holoska\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apmazuriextype, ".\\Adventure Pack\\Extended\\MazuriEX\\") && (!StringHelper::Compare(apmazuritype, "Off") || (!StringHelper::Compare(apmazuritype, ".\\Adventure Pack\\Standalone\\Mazuri\\"))) {
+	if (!StringHelper::Compare(apmazuriextype, ".\\Adventure Pack\\Extended\\MazuriEX\\") && (!StringHelper::Compare(apmazuritype, "Off") || (!StringHelper::Compare(apmazuritype, ".\\Adventure Pack\\Standalone\\Mazuri\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apshamarextype, ".\\Adventure Pack\\Extended\\ShamarEX\\") && (!StringHelper::Compare(apshamartype, "Off") || (!StringHelper::Compare(apshamartype, ".\\Adventure Pack\\Standalone\\Shamar\\"))) {
+	if (!StringHelper::Compare(apshamarextype, ".\\Adventure Pack\\Extended\\ShamarEX\\") && (!StringHelper::Compare(apshamartype, "Off") || (!StringHelper::Compare(apshamartype, ".\\Adventure Pack\\Standalone\\Shamar\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
-	if (!StringHelper::Compare(apspagoniaextype, ".\\Adventure Pack\\Extended\\SpagoniaEX\\") && (!StringHelper::Compare(apspagoniatype, "Off") || (!StringHelper::Compare(apspagoniatype, ".\\Adventure Pack\\Standalone\\Spagonia\\"))) {
+	if (!StringHelper::Compare(apspagoniaextype, ".\\Adventure Pack\\Extended\\SpagoniaEX\\") && (!StringHelper::Compare(apspagoniatype, "Off") || (!StringHelper::Compare(apspagoniatype, ".\\Adventure Pack\\Standalone\\Spagonia\\")))) {
 		MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-			exit(-1);
+		exit(-1);
 	}
 }
