@@ -8,6 +8,8 @@ std::string egbadd1type;
 std::string setexadabattype; 
 std::string stagepacktype;
 std::string stageegbpacktype;
+std::string customhudtype;
+std::string customcharactertype;
 //std::string apadabattype;
 //std::string apapotostype;
 //std::string apchinatype;
@@ -38,6 +40,9 @@ extern "C" __declspec(dllexport) void Init()
 	 setexadabattype = reader.Get("Main", "IncludeDir4", "Off");
      stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project\\");
 	 stageegbpacktype = reader.Get("Main", "IncludeDir7", ".\\Extra\\STGEggmanLand\\");
+	 upadd1type = reader.Get("Main", "IncludeDir1", ".\\Unleashed Project\\UPDeluxe\\");
+	 customhudtype = reader.Get("Main", "IncludeDir17", ".\\HUD\\Extra\\Custom\\HUD\\");
+	 customcharactertype = reader.Get("Main", "IncludeDir16", ".\\Character\\Custom\\Archive\\");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\Adabat\\" "Off");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\Apotos\\" "Off");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\China\\" "Off");
@@ -73,6 +78,14 @@ extern "C" __declspec(dllexport) void PostInit()
 	}
 	if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd1type, "Off"))) {
 		MessageBoxA(nullptr, "Please set EggmanLand's music to day when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+		exit(-1);
+	}
+	if (!StringHelper::Compare(customhudtype, "Off") && (!StringHelper::Compare(hudtype, "Off"))) {
+		MessageBoxA(nullptr, "Please disable Encore HUD options when using a custom imported HUD.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+		exit(-1);
+	}
+	if (!StringHelper::Compare(customcharactertype, "Off") && (!StringHelper::Compare(sonictype, "Off"))) {
+		MessageBoxA(nullptr, "Please disable Encore Sonic or Character options when using a custom imported Character.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
 	//if (!StringHelper::Compare(apadabatextype, ".\\Adventure Pack\\Extended\\AdabatEX\\") && (!StringHelper::Compare(apadabattype, "Off") || (!StringHelper::Compare(apadabattype, ".\\Adventure Pack\\Standalone\\Adabat\\")))) {
