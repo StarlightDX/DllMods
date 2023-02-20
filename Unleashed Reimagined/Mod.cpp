@@ -5,6 +5,7 @@ std::string upadd2type;
 std::string upadd3type;
 std::string uprtxtype;
 std::string egbadd1type;
+std::string egbadd2type;
 std::string setexadabattype; 
 std::string stagepacktype;
 std::string stageegbpacktype;
@@ -37,6 +38,7 @@ extern "C" __declspec(dllexport) void Init()
      upadd3type = reader.Get("Main", "IncludeDir3", "Off");
 	 uprtxtype = reader.Get("Main", "IncludeDir0", "Off");
 	 egbadd1type = reader.Get("Main", "IncludeDir6", "Off");
+	 egbadd2type = reader.Get("Main", "IncludeDir21", "Off");
 	 setexadabattype = reader.Get("Main", "IncludeDir4", "Off");
      stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project\\");
 	 stageegbpacktype = reader.Get("Main", "IncludeDir7", ".\\Extra\\STGEggmanLand\\");
@@ -69,7 +71,7 @@ extern "C" __declspec(dllexport) void PostInit()
 		exit(-1);
 	}
 	if (!StringHelper::Compare(sonictype, "Off") && GetModuleHandle(TEXT("GenerationsD3D11.dll")) == nullptr) {
-		MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable Direct3D 11 and retry, or disable Encore Sonic.", "Encore Sonic", MB_ICONERROR);
+		MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable the Direct3D 11 mod and retry, alternatively enable Direct3D 9 support.", "Encore Sonic", MB_ICONERROR);
 		exit(-1);
 	}
 	if (!StringHelper::Compare(stagepacktype, ".\\Unleashed Project\\Unleashed Project\\") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(upadd2type, "Off") || !StringHelper::Compare(upadd3type, "Off") || !StringHelper::Compare(uprtxtype, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
@@ -78,6 +80,10 @@ extern "C" __declspec(dllexport) void PostInit()
 	}
 	if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd1type, "Off"))) {
 		MessageBoxA(nullptr, "Please set EggmanLand's music to day when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+		exit(-1);
+	}
+	if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd2type, "Off"))) {
+		MessageBoxA(nullptr, "Please set Tornado Defence options to off when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
 	if (!StringHelper::Compare(customhudtype, "Off") && (!StringHelper::Compare(hudtype, "Off"))) {
