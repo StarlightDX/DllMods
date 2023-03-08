@@ -1,6 +1,9 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
-    { "EncoreShoe", { "Sonic" } }
+    { "EncoreShoe", { "Sonic", "evSonic" } },
+    { "EncoreGlove", { "Sonic", "evSonic" } },
+    { "evEncoreShoe", { "ev031", "ev041", "ev042", "ev091" } },
+    { "evEncoreGlove", { "ev031", "ev041", "ev042", "ev091" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)
