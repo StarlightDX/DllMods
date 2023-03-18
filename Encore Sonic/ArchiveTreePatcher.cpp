@@ -1,9 +1,16 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
-    { "EncoreShoe", { "Sonic", "evSonic" } },
-    { "EncoreGlove", { "Sonic", "evSonic" } },
-    { "evEncoreShoe", { "ev031", "ev041", "ev042", "ev091" } },
-    { "evEncoreGlove", { "ev031", "ev041", "ev042", "ev091" } }
+    { "EncoreSkin", { "Sonic", "evSonic", "Title", "TitleEncore" } }, /*Additional Skin options*/
+    { "evEncoreSkin", { "ev031", "ev041", "ev042", "ev091" } }, /*Additional Skin options for cutscenes*/
+    { "EncoreChip", { "Sonic" } }, /*Chip Bracelet files*/
+    { "evEncoreChip", { "evSonic" } }, /*Chip Bracelet files for cutscenes*/
+    { "EncoreEffect", { "Sonic", "evSonic", "SonicActionCommon" } }, /*Boost, Spinball & Jump FX*/
+    { "evEncore", { "evSonic" } }, 
+    { "ev031add", { "ev031" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev041add", { "ev041" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev042add", { "ev042" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev091add", { "bne", "ev091" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "TitleEncore", { "Title" } }, /*Overwrites the title files for compatibility with other mods.*/
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)

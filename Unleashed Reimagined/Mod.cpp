@@ -8,6 +8,7 @@ std::string egbadd2type;
 std::string setexadabattype; 
 std::string stagepacktype;
 std::string stageegbpacktype;
+std::string suencoretype;
 std::string customhudtype;
 std::string customcharactertype;
 //std::string apadabattype;
@@ -39,8 +40,10 @@ extern "C" __declspec(dllexport) void Init()
 	 egbadd2type = reader.Get("Main", "IncludeDir21", "Off");
 	 setexadabattype = reader.Get("Main", "IncludeDir4", "Off");
      stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project\\");
+	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\UPAddon\\");
+	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Wii\\");
 	 stageegbpacktype = reader.Get("Main", "IncludeDir7", ".\\Extra\\STGEggmanLand\\");
-	 upadd1type = reader.Get("Main", "IncludeDir1", ".\\Unleashed Project\\UPDeluxe\\");
+	 //suencoretype = reader.Get("Main", "IncludeDir7", ".\\Extra\\Unleashed Encore\\Remake\\Unleashed\\");
 	 customhudtype = reader.Get("Main", "IncludeDir17", ".\\HUD\\Extra\\Custom\\HUD\\");
 	 customcharactertype = reader.Get("Main", "IncludeDir16", ".\\Character\\Custom\\Archive\\");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\Adabat\\" "Off");
@@ -72,6 +75,14 @@ extern "C" __declspec(dllexport) void PostInit()
 		MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable the Direct3D 11 mod and retry, alternatively enable Direct3D 9 support.", "Encore Sonic", MB_ICONERROR);
 		exit(-1);
 	}
+	//if (!StringHelper::Compare(suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Unleashed\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Adabat\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Apotos\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\China\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Empire\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Holoska\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Mazuri\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Shamar\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Spagonia\\") && GetModuleHandle(TEXT("EnemyTrigger.dll")) == nullptr) {
+	//	MessageBoxA(nullptr, "Enemy Trigger is required to use Sonic Unleashed: Encore options, please enable the Enemy Trigger mod and retry.", "Sonic Unleashed: Encore", MB_ICONERROR);
+	//	exit(-1);
+	//}
+	//if (!StringHelper::Compare(suencoretype, ".\\Unleashed Project\\Unleashed Project\\") || (".\\Unleashed Project\\UPAddon\\") || (".\\Unleashed Project\\Unleashed Project Wii\\") && GetModuleHandle(TEXT("EnemyTrigger.dll")) == nullptr) {
+	//	MessageBoxA(nullptr, "Enemy Trigger is required to use Sonic Unleashed: Encore options, please enable the Enemy Trigger mod and retry.", "Sonic Unleashed: Encore", MB_ICONERROR);
+	//	exit(-1);
+	//}
 	if (!StringHelper::Compare(stagepacktype, ".\\Unleashed Project\\Unleashed Project\\") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(upadd2type, "Off") || !StringHelper::Compare(upadd3type, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
 		MessageBoxA(nullptr, "Unleashed Project mode is required for DX, Directors Cut, UP Encore & additional Layout options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);

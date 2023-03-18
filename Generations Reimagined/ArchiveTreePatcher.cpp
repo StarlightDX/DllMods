@@ -1,6 +1,6 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
-    { "SoundEggmanLand", { "ghz200", "cpz200" } }
+    { "RainParticle", { "Sonic" "ActionCommon", "cpz200", "cpz100", "cpz_cmn", "SonicActionCommon", "csc200", "csc100", "csc_cmn" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)
