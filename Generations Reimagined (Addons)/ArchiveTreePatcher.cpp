@@ -1,8 +1,5 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
-    { "SoundEggmanLand", { "ghz200", "cpz200" } },
-    { "EncoreSonic", { "Sonic" } },
-    { "EncoreShoe", { "Sonic" } },
     { "pamcustom", { "pam000" } },
     { "gatecustom", { "StageGate" } }
 };
