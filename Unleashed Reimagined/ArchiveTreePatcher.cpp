@@ -4,7 +4,18 @@ std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies =
     { "EncoreSonic", { "Sonic" } },
     { "EncoreShoe", { "Sonic" } },
     { "pamcustom", { "pam000" } },
-    { "gatecustom", { "StageGate" } }
+    { "gatecustom", { "StageGate" } },
+    { "TitleR", { "Title" } },
+    { "SSHEncore", { "SSH200" } },
+    { "MYK100", { "GHZ100", "PLA100", "PLA200" } },
+    { "MYK200", { "GHZ200" } },
+    { "AFR200", { "CPZ200" } },
+    { "EU200", { "SSZ200" } },
+    { "CHN200", { "SPH200" } },
+    { "SNW200", { "CTE200" } },
+    { "PTR200", { "SSH200" } },
+    { "NYC200", { "CSC200" } },
+    { "SEA200", { "EUC200" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)
