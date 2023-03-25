@@ -6,16 +6,30 @@ std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies =
     { "pamcustom", { "pam000" } },
     { "gatecustom", { "StageGate" } },
     { "TitleR", { "Title" } },
-    { "SSHEncore", { "SSH200" } },
-    { "MYK100", { "GHZ100", "PLA100", "PLA200" } },
-    { "MYK200", { "GHZ200" } },
-    { "AFR200", { "CPZ200" } },
-    { "EU200", { "SSZ200" } },
-    { "CHN200", { "SPH200" } },
-    { "SNW200", { "CTE200" } },
-    { "PTR200", { "SSH200" } },
-    { "NYC200", { "CSC200" } },
-    { "SEA200", { "EUC200" } }
+    { "sshEncore", { "ssh200" } },
+    { "myk100", { "ghz100", "pla100", "pla200", "ghz_cmn", "pla_cmn" } },
+    { "myk200", { "ghz200", "ghz_cmn" } },
+    { "afr200", { "cpz200", "cpz_cmn" } },
+    { "eu200", { "ssz200", "ssz_cmn" } },
+    { "chn200", { "sph200", "sph_cmn" } },
+    { "snw200", { "cte200", "cte_cmn" } },
+    { "ptr200", { "ssh200", "ssh_cmn" } },
+    { "nyc200", { "csc200", "csc_cmn" } },
+    { "sea200", { "euc200", "euc_cmn" } },
+    { "EncoreSkin", { "Sonic", "evSonic", "ev031", "ev041", "ev042", "ev091" } }, /*Additional Skin options*/
+    { "evEncoreSkin", { "ev031", "ev041", "ev042", "ev091" } }, /*Additional Skin options for cutscenes*/
+    { "EncoreChip", { "Sonic" } }, /*Chip Bracelet files*/
+    { "EncoreBoard", { "Sonic" } }, /*Board Skin files*/
+    { "EncoreGear", { "Sonic", "evSonic", "ev031", "ev041", "ev042", "ev091" } }, /*Gear Skin files*/
+    { "evEncoreChip", { "evSonic" } }, /*Chip Bracelet files for cutscenes*/
+    { "EncoreEffect", { "Sonic", "evSonic", "SonicActionCommon" } }, /*Boost, Spinball & Jump FX*/
+    { "evEncore", { "evSonic" } },
+    { "ev031add", { "ev031" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev041add", { "ev041" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev042add", { "ev042" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev091add", { "bne", "ev091" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "TitleEncore", { "Title" } }, /*Overwrites the title files for compatibility with other mods.*/
+    { "AddSonic", { "Sonic" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)

@@ -1,8 +1,8 @@
 std::string hudtype;
 std::string sonictype;
 std::string upadd1type;
-std::string upadd2type;
-std::string upadd3type;
+//std::string upadd2type;
+//std::string upadd3type;
 std::string egbadd1type;
 std::string egbadd2type;
 std::string setexadabattype; 
@@ -34,8 +34,8 @@ extern "C" __declspec(dllexport) void Init()
      hudtype = reader.Get("Main", "IncludeDir9", "Off");
 	 sonictype = reader.Get("Main", "IncludeDir8", "Off");
      upadd1type = reader.Get("Main", "IncludeDir1", ".\\Unleashed Project\\UPDeluxe\\");
-     upadd2type = reader.Get("Main", "IncludeDir2", "Off");
-     upadd3type = reader.Get("Main", "IncludeDir3", "Off");
+     //upadd2type = reader.Get("Main", "IncludeDir2", "Off");
+     //upadd3type = reader.Get("Main", "IncludeDir3", "Off");
 	 egbadd1type = reader.Get("Main", "IncludeDir6", "Off");
 	 egbadd2type = reader.Get("Main", "IncludeDir21", "Off");
 	 setexadabattype = reader.Get("Main", "IncludeDir4", "Off");
@@ -83,7 +83,11 @@ extern "C" __declspec(dllexport) void PostInit()
 	//	MessageBoxA(nullptr, "Enemy Trigger is required to use Sonic Unleashed: Encore options, please enable the Enemy Trigger mod and retry.", "Sonic Unleashed: Encore", MB_ICONERROR);
 	//	exit(-1);
 	//}
-	if (!StringHelper::Compare(stagepacktype, ".\\Unleashed Project\\Unleashed Project\\") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(upadd2type, "Off") || !StringHelper::Compare(upadd3type, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
+	//if (!StringHelper::Compare(stagepacktype, ".\\Unleashed Project\\Unleashed Project\\") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(upadd2type, "Off") || !StringHelper::Compare(upadd3type, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
+	//	MessageBoxA(nullptr, "Unleashed Project mode is required for DX, Directors Cut, UP Encore & additional Layout options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
+	if (!StringHelper::Compare(stagepacktype, ".\\Unleashed Project\\Unleashed Project\\") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
 		MessageBoxA(nullptr, "Unleashed Project mode is required for DX, Directors Cut, UP Encore & additional Layout options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
