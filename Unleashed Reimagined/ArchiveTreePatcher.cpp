@@ -16,6 +16,7 @@ std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies =
     { "ptr200", { "ssh200", "ssh_cmn" } },
     { "nyc200", { "csc200", "csc_cmn" } },
     { "sea200", { "euc200", "euc_cmn" } },
+    { "euc_cmnadd", { "euc_cmn" } },
     { "EncoreSkin", { "Sonic", "evSonic", "ev031", "ev041", "ev042", "ev091" } }, /*Additional Skin options*/
     { "evEncoreSkin", { "ev031", "ev041", "ev042", "ev091" } }, /*Additional Skin options for cutscenes*/
     { "EncoreChip", { "Sonic" } }, /*Chip Bracelet files*/
