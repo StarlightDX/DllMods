@@ -1,6 +1,13 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
-    { "RainParticle", { "Sonic" "ActionCommon", "cpz200", "cpz100", "cpz_cmn", "SonicActionCommon", "csc200", "csc100", "csc_cmn" } }
+{ "RainbowStage", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "rsoload", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "fctload", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "shpload", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "plaload", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "quaload", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "astload", { "ghz100", "ghz200", "ghz_cmn", "cpz100", "cpz200", "cpz_cmn","ssz100", "ssz200", "ssz_cmn","sph100", "sph200", "sph_cmn","cte100", "cte200", "cte_cmn","ssh100", "ssh200", "ssh_cmn","csc100", "csc200", "csc_cmn","euc100", "euc200", "euc_cmn","pla100", "pla200", "pla_cmn", "pam000", "pam_cmn" } },
+{ "TitleSCR", { "Title" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)

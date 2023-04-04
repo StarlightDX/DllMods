@@ -1,12 +1,14 @@
 std::string hudtype;
 std::string sonictype;
 std::string upadd1type;
+std::string upnadd1type;
 //std::string upadd2type;
 //std::string upadd3type;
 std::string egbadd1type;
 std::string egbadd2type;
 std::string setexadabattype; 
 std::string stagepacktype;
+std::string stagepackntype;
 std::string stageegbpacktype;
 std::string suencoretype;
 std::string customhudtype;
@@ -34,12 +36,14 @@ extern "C" __declspec(dllexport) void Init()
      hudtype = reader.Get("Main", "IncludeDir9", "Off");
 	 sonictype = reader.Get("Main", "IncludeDir8", "Off");
      upadd1type = reader.Get("Main", "IncludeDir1", ".\\Unleashed Project\\UPDeluxe\\");
+	 upnadd1type = reader.Get("Main", "IncludeDir2", ".\\Unleashed Project\\UPNAdditional\\");
      //upadd2type = reader.Get("Main", "IncludeDir2", "Off");
      //upadd3type = reader.Get("Main", "IncludeDir3", "Off");
 	 egbadd1type = reader.Get("Main", "IncludeDir6", "Off");
 	 egbadd2type = reader.Get("Main", "IncludeDir21", "Off");
 	 setexadabattype = reader.Get("Main", "IncludeDir4", "Off");
      stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project\\");
+	 stagepackntype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Nightfall\\");
 	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\UPAddon\\");
 	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Wii\\");
 	 stageegbpacktype = reader.Get("Main", "IncludeDir7", ".\\Extra\\STGEggmanLand\\");
@@ -89,6 +93,10 @@ extern "C" __declspec(dllexport) void PostInit()
 	//}
 	if (!StringHelper::Compare(stagepacktype, ".\\Unleashed Project\\Unleashed Project\\") && (!StringHelper::Compare(upadd1type, "Off") || !StringHelper::Compare(setexadabattype, "Off"))) {
 		MessageBoxA(nullptr, "Unleashed Project mode is required for DX, Directors Cut, UP Encore & additional Layout options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+		exit(-1);
+	}
+	if (!StringHelper::Compare(stagepackntype, ".\\Unleashed Project\\Unleashed Project Nightfall\\") && (!StringHelper::Compare(upnadd1type, "Off"))) {
+		MessageBoxA(nullptr, "Unleashed Project Nightfall mode is required for additional options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
 	if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd1type, "Off"))) {
