@@ -1,4 +1,4 @@
-#include <string_view>
+//#include <string_view>
 std::string hudtype;
 std::string sonictype;
 std::string upadd1type;
