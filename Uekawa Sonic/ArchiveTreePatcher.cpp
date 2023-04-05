@@ -1,6 +1,6 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
-    { "UekawaAnim", { "Sonic" } },
+    { "RougeTexset", { "Sonic" } },
     { "UekawaModel", { "Sonic" } },
     { "UekawaAdd", { "Title" } }
 };
