@@ -1,7 +1,8 @@
 std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies = 
 {
 { "cmn200rouge", { "cmn200" } },
-{ "RougeAdd", { "Sonic" } }
+{ "RougeAdd", { "Sonic" } },
+{ "TitleModern", { "Title", "evSonic" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)

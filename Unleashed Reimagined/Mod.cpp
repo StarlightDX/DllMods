@@ -1,7 +1,9 @@
-//#include <string_view>
+#include <string_view>
 std::string hudtype;
 std::string sonictype;
 std::string upadd1type;
+//std::string apaddeuctype;
+//std::string apaddchntype;
 std::string upnadd1type;
 //std::string upadd2type;
 //std::string upadd3type;
@@ -9,6 +11,8 @@ std::string egbadd1type;
 std::string egbadd2type;
 std::string setexadabattype; 
 std::string stagepacktype;
+std::string stagepackeuctype;
+std::string stagepackchntype;
 std::string stagepackntype;
 std::string stageegbpacktype;
 std::string suencoretype;
@@ -41,13 +45,17 @@ extern "C" __declspec(dllexport) void Init()
      hudtype = reader.Get("Main", "IncludeDir9", "Off");
 	 sonictype = reader.Get("Main", "IncludeDir8", "Off");
      upadd1type = reader.Get("Main", "IncludeDir1", ".\\Unleashed Project\\UPDeluxe\\");
+	 //apaddeuctype = reader.Get("Main", "IncludeDir1", ".\\Adventure Pack\\Extended\SpagoniaEX\\");
+	 //apaddchntype = reader.Get("Main", "IncludeDir1", ".\\Adventure Pack\\Extended\ChinaEX\\");
 	 upnadd1type = reader.Get("Main", "IncludeDir2", ".\\Unleashed Project\\UPNAdditional\\");
      //upadd2type = reader.Get("Main", "IncludeDir2", "Off");
      //upadd3type = reader.Get("Main", "IncludeDir3", "Off");
 	 egbadd1type = reader.Get("Main", "IncludeDir6", "Off");
 	 egbadd2type = reader.Get("Main", "IncludeDir21", "Off");
 	 setexadabattype = reader.Get("Main", "IncludeDir4", "Off");
-     stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project\\");
+	 stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project\\");
+     stagepackeuctype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\Spagonia\\");
+	 stagepackchntype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\China\\");
 	 stagepackntype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Nightfall\\");
 	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\UPAddon\\");
 	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Wii\\");
@@ -103,6 +111,14 @@ extern "C" __declspec(dllexport) void PostInit()
 		MessageBoxA(nullptr, "Unleashed Project mode is required for DX, Directors Cut, UP Encore & additional Layout options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
+	//if (!StringHelper::Compare(stagepackeuctype, ".\\Adventure Pack\\Standalone\\Spagonia\\") && (!StringHelper::Compare(apaddeuctype, "Off"))) {
+	//	MessageBoxA(nullptr, "Spagonia Adventure Pack mode is required EX. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
+	//if (!StringHelper::Compare(stagepackchntype, ".\\Adventure Pack\\Standalone\\China\\") && (!StringHelper::Compare(apaddchntype, "Off"))) {
+	//	MessageBoxA(nullptr, "Chun-Nan Adventure Pack mode is required for EX. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
 	if (!StringHelper::Compare(stagepackntype, ".\\Unleashed Project\\Unleashed Project Nightfall\\") && (!StringHelper::Compare(upnadd1type, "Off"))) {
 		MessageBoxA(nullptr, "Unleashed Project Nightfall mode is required for additional options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
