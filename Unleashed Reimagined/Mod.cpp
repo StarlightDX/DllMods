@@ -16,8 +16,8 @@ std::string stagepackchntype;
 std::string stagepackntype;
 std::string stageegbpacktype;
 std::string suencoretype;
-std::string customhudtype;
-std::string customcharactertype;
+//std::string customhudtype;
+//std::string customcharactertype;
 //std::string apadabattype;
 //std::string apapotostype;
 //std::string apchinatype;
@@ -42,8 +42,8 @@ std::string swaAdd;
 extern "C" __declspec(dllexport) void Init()
 {
 	INIReader reader("mod.ini");
-     hudtype = reader.Get("Main", "IncludeDir9", "Off");
-	 sonictype = reader.Get("Main", "IncludeDir8", "Off");
+  //   hudtype = reader.Get("Main", "IncludeDir9", "Off");
+	 //sonictype = reader.Get("Main", "IncludeDir8", "Off");
      upadd1type = reader.Get("Main", "IncludeDir1", ".\\Unleashed Project\\UPDeluxe\\");
 	 //apaddeuctype = reader.Get("Main", "IncludeDir1", ".\\Adventure Pack\\Extended\SpagoniaEX\\");
 	 //apaddchntype = reader.Get("Main", "IncludeDir1", ".\\Adventure Pack\\Extended\ChinaEX\\");
@@ -59,10 +59,10 @@ extern "C" __declspec(dllexport) void Init()
 	 stagepackntype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Nightfall\\");
 	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\UPAddon\\");
 	 //stagepacktype = reader.Get("Main", "IncludeDir7", ".\\Unleashed Project\\Unleashed Project Wii\\");
-	 stageegbpacktype = reader.Get("Main", "IncludeDir7", ".\\Extra\\STGEggmanLand\\");
+	 //stageegbpacktype = reader.Get("Main", "IncludeDir7", ".\\Extra\\STGEggmanLand\\");
 	 //suencoretype = reader.Get("Main", "IncludeDir7", ".\\Extra\\Unleashed Encore\\Remake\\Unleashed\\");
-	 customhudtype = reader.Get("Main", "IncludeDir17", ".\\HUD\\Extra\\Custom\\HUD\\");
-	 customcharactertype = reader.Get("Main", "IncludeDir16", ".\\Character\\Custom\\Archive\\");
+	 //customhudtype = reader.Get("Main", "IncludeDir17", ".\\HUD\\Extra\\Custom\\HUD\\");
+	 //customcharactertype = reader.Get("Main", "IncludeDir16", ".\\Character\\Custom\\Archive\\");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\Adabat\\" "Off");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\Apotos\\" "Off");
 	 //apadabattype = reader.Get("Main", "IncludeDir7", ".\\Adventure Pack\\Standalone\\China\\" "Off");
@@ -87,14 +87,14 @@ extern "C" __declspec(dllexport) void Init()
 extern "C" __declspec(dllexport) void PostInit()
 {
 	
-	if (!StringHelper::Compare(hudtype, "Off") && GetModuleHandle(TEXT("UnleashedHUD.dll")) == nullptr) {
-		MessageBoxA(nullptr, "Sonic Unleashed HUD is required to be loaded under Reimagined to use Encore HUD.", "Encore HUD", MB_ICONERROR);	
-		exit(-1);
-	}
-	if (!StringHelper::Compare(sonictype, "Off") && GetModuleHandle(TEXT("GenerationsD3D11.dll")) == nullptr) {
-		MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable the Direct3D 11 mod and retry, alternatively enable Direct3D 9 support.", "Encore Sonic", MB_ICONERROR);
-		exit(-1);
-	}
+	//if (!StringHelper::Compare(hudtype, "Off") && GetModuleHandle(TEXT("UnleashedHUD.dll")) == nullptr) {
+	//	MessageBoxA(nullptr, "Sonic Unleashed HUD is required to be loaded under Reimagined to use Encore HUD.", "Encore HUD", MB_ICONERROR);	
+	//	exit(-1);
+	//}
+	//if (!StringHelper::Compare(sonictype, "Off") && GetModuleHandle(TEXT("GenerationsD3D11.dll")) == nullptr) {
+	//	MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable the Direct3D 11 mod and retry, alternatively enable Direct3D 9 support.", "Encore Sonic", MB_ICONERROR);
+	//	exit(-1);
+	//}
 	//if (!StringHelper::Compare(suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Unleashed\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Adabat\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Apotos\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\China\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Empire\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Holoska\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Mazuri\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Shamar\\") || (suencoretype, ".\\Extra\\Unleashed Encore\\Remake\\Spagonia\\") && GetModuleHandle(TEXT("EnemyTrigger.dll")) == nullptr) {
 	//	MessageBoxA(nullptr, "Enemy Trigger is required to use Sonic Unleashed: Encore options, please enable the Enemy Trigger mod and retry.", "Sonic Unleashed: Encore", MB_ICONERROR);
 	//	exit(-1);
@@ -123,22 +123,22 @@ extern "C" __declspec(dllexport) void PostInit()
 		MessageBoxA(nullptr, "Unleashed Project Nightfall mode is required for additional options. Please disable this/these option(s) when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 		exit(-1);
 	}
-	if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd1type, "Off"))) {
-		MessageBoxA(nullptr, "Please set EggmanLand's music to day when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-		exit(-1);
-	}
-	if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd2type, "Off"))) {
-		MessageBoxA(nullptr, "Tornado Defence options require EggmanLand mode. Please set Tornado Defence options to off when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-		exit(-1);
-	}
-	if (!StringHelper::Compare(customhudtype, "Off") && (!StringHelper::Compare(hudtype, "Off"))) {
-		MessageBoxA(nullptr, "Please disable Encore HUD options when using a custom imported HUD.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-		exit(-1);
-	}
-	if (!StringHelper::Compare(customcharactertype, "Off") && (!StringHelper::Compare(sonictype, "Off"))) {
-		MessageBoxA(nullptr, "Please disable Encore Sonic or Character options when using a custom imported Character.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
-		exit(-1);
-	}
+	//if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd1type, "Off"))) {
+	//	MessageBoxA(nullptr, "Please set EggmanLand's music to day when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
+	//if (!StringHelper::Compare(stageegbpacktype, ".\\Extra\\STGEggmanLand\\") && (!StringHelper::Compare(egbadd2type, "Off"))) {
+	//	MessageBoxA(nullptr, "Tornado Defence options require EggmanLand mode. Please set Tornado Defence options to off when using different stage packs.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
+	//if (!StringHelper::Compare(customhudtype, "Off") && (!StringHelper::Compare(hudtype, "Off"))) {
+	//	MessageBoxA(nullptr, "Please disable Encore HUD options when using a custom imported HUD.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
+	//if (!StringHelper::Compare(customcharactertype, "Off") && (!StringHelper::Compare(sonictype, "Off"))) {
+	//	MessageBoxA(nullptr, "Please disable Encore Sonic or Character options when using a custom imported Character.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
+	//	exit(-1);
+	//}
 	//if (!StringHelper::Compare(apadabatextype, ".\\Adventure Pack\\Extended\\AdabatEX\\") && (!StringHelper::Compare(apadabattype, "Off") || (!StringHelper::Compare(apadabattype, ".\\Adventure Pack\\Standalone\\Adabat\\")))) {
 	//	MessageBoxA(nullptr, "Temp text.", "Sonic Unleashed: Reimagined", MB_ICONERROR);
 	//	exit(-1);
