@@ -8,8 +8,8 @@ extern "C" __declspec(dllexport) void Init()
 extern "C" __declspec(dllexport) void PostInit()
 {
 	
-	if (GetModuleHandle(TEXT("GenerationsD3D11.dll")) == nullptr) {
-		MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable Direct3D 11 and retry, or disable Encore Sonic.", "Encore Sonic", MB_ICONERROR);
-		exit(-1);
-	}
+	//if (GetModuleHandle(TEXT("GenerationsD3D11.dll")) == nullptr) {
+	//	MessageBoxA(nullptr, "Direct3D 11 is required to use Encore Sonic, please enable Direct3D 11 and retry, or disable Encore Sonic.", "Encore Sonic", MB_ICONERROR);
+	//	exit(-1);
+	//}
 }
