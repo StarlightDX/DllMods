@@ -11,9 +11,10 @@ std::vector<ArchiveDependency> ArchiveTreePatcher::archiveDependencies =
     { "ev031add", { "ev031" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
     { "ev041add", { "ev041" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
     { "ev042add", { "ev042" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
-    { "ev091add", { "bne", "ev091" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
+    { "ev091add", { "ev091" } }, /*Files in Chip Bracelet that add the Bracelet to ev000*/
     { "TitleEncore", { "Title" } }, /*Overwrites the title files for compatibility with other mods.*/
-    { "AddSonic", { "Sonic" } }
+    { "AddSonic", { "Sonic" } },
+    { "ref_ghz", { "ghz200", "ghz_cmn" } }
 };
 
 HOOK(bool, __stdcall, ParseArchiveTree, 0xD4C8E0, void* a1, char* pData, const size_t size, void* pDatabase)
