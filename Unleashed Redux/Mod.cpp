@@ -3,12 +3,13 @@ extern "C" __declspec(dllexport) void PostInit()
 {
 	
 	if (GetModLoaderAPI()->FindMod(“sonic.aventurepack.adabat”))
+		using namespace std;
 		int main() {
 		// Create and open a text file
-		ofstream MyFile("filename.txt");
+		ofstream MyFile("mod.ini");
 
 		// Write to the file
-		MyFile << "Files can be tricky, but it is fun enough!";
+		MyFile << "adventurepack_adabat.ini";
 
 		// Close the file
 		MyFile.close();
