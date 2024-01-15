@@ -1,14 +1,9 @@
 #include <string_view>
+#include "ModLoader.h"
 std::string bb;
 std::string	swa;
-std::string	proxy;
-std::string	bbAdd;
-std::string swaAdd;
-std::string dxtype;
-std::string dctype;
-std::string ectype;
-std::string wiitype;
-std::string nftype;
+std::string	sonic.adventurepack.adabat
+
 extern "C" __declspec(dllexport) void PostInit()
 {
 	
