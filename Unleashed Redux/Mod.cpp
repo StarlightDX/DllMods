@@ -1,11 +1,15 @@
-#include <string_view>
 #include "ModLoader.h"
-std::string bb;
-std::string	swa;
 extern "C" __declspec(dllexport) void PostInit()
 {
 	
 	if (GetModLoaderAPI()->FindMod(“sonic.aventurepack.adabat”))
-	{
-		advenuturepack_adabat.ini
+		int main() {
+		// Create and open a text file
+		ofstream MyFile("filename.txt");
+
+		// Write to the file
+		MyFile << "Files can be tricky, but it is fun enough!";
+
+		// Close the file
+		MyFile.close();
 	}
